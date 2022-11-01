@@ -50,8 +50,14 @@ def main(folder: Path):
         handle_media(file, folder / 'images' / 'SVG')
     for file in parser.MP3_AUDIO:
         handle_media(file, folder / 'audio' / 'MP3')
+    for file in parser.PDF_DOCUMENTS:
+        handle_media(file, folder / 'documents' / 'PDF')
+    for file in parser.MS_WORD_DOCUMENTS:
+        handle_media(file, folder / 'documents' / 'MS_WORD')
     for file in parser.MY_OTHER:
         handle_other(file, folder / 'MY_OTHER')
+    for file in parser.MOV_VIDEOS:
+        handle_other(file, folder / 'videos' / 'MOV')
     for file in parser.ARCHIVES:
         handle_archive(file, folder / 'archives')
     for folder in parser.FOLDERS[::-1]:
